@@ -36,4 +36,7 @@ class CategoryController extends Controller
     	$category = Category::findOrFail($category_id);
     	$category->delete();
     }
+    public function index(){
+    	return view('Category.index');
+    }
 }

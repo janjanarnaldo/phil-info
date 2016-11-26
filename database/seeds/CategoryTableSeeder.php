@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use Faker\Factory as Faker;
 
-class CategorytypesTableSeeder extends Seeder
+class CategoryTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,8 +14,10 @@ class CategorytypesTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        foreach (range(1,4) as $index) {
-	      DB::table('category_types')->insert([
+        foreach (range(1,10) as $index) {
+	      DB::table('categories')->insert([
+	            'category_type_id' => \App\CategoryType::find($index)->id,
+	            'name' => $faker->name,
 	            'description' => $faker->paragraph,
 	      ]);
   		}

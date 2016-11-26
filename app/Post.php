@@ -9,7 +9,9 @@ use App\User;
 
 class Post extends Model
 {
-    
+    protected $fillable = [
+        'category_id', 'user_id', 'subject', 'body',
+    ];
 
     public function category() {
     	return $this->belongsTo('App\Category');

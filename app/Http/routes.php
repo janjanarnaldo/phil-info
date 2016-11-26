@@ -12,9 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome');	
 });
 
-Route::auth();
+//Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::post('/category/add', 'CategoryController@store');
+
+// TEST
+Route::post('/category/add', 'CategoryController@store');
+Route::post('/category/delete/{category_id?}', 'CategoryController@delete');
+Route::post('/category/update/{category_id?}', 'CategoryController@update');
+
+
